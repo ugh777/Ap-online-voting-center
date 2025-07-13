@@ -76,7 +76,7 @@ welcome to Ap online voting center
                 colorVotes[selectedColor] = (colorVotes[selectedColor] || 0)+1;
                 localStorage.setItem('colorVotes', JSON.stringify(colorVotes));
                 resultMessage.textContent = `You voted for 
-                                             ${selectedColor} House.`;
+                                             ${selected party } party .`;
                 displayVotes();
             });
             clearButton.addEventListener('click', function () {
