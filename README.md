@@ -1,4 +1,3 @@
-welcome to Ap online voting center
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,15 +23,15 @@ welcome to Ap online voting center
           </h1>
         <div class="flex flex-col mb-4">
             <label for="color" class="text-lg font-semibold mb-2">
-                  Select party:
+                  Select Color:
               </label>
             <select id="color" 
                     class="border border-gray-300 rounded-md 
                            py-2 px-3 focus:outline-none">
-                <option value="fan">ysrcp</option>
-                <option value="cycle">tdp</option>
-                <option value="glass">janasena</option>
-                <option value="flower">bjp</option>
+                <option value="Red">Red House</option>
+                <option value="Blue">Blue House</option>
+                <option value="Green">Green House</option>
+                <option value="Yellow">Yellow House</option>
             </select>
         </div>
         <button id="voteButton"
@@ -76,7 +75,7 @@ welcome to Ap online voting center
                 colorVotes[selectedColor] = (colorVotes[selectedColor] || 0)+1;
                 localStorage.setItem('colorVotes', JSON.stringify(colorVotes));
                 resultMessage.textContent = `You voted for 
-                                             ${selectedColor} party.`;
+                                             ${selectedColor} House.`;
                 displayVotes();
             });
             clearButton.addEventListener('click', function () {
@@ -125,12 +124,12 @@ welcome to Ap online voting center
             });
             function displayVotes() {
                 votedList.innerHTML = '';
-                const partyVotes = JSON.parse(localStorage
-                                              .getItem('partyVotes')) || {};
+                const colorVotes = JSON.parse(localStorage
+                                              .getItem('colorVotes')) || {};
                 for (const color in colorVotes) {
                     const voteItem = document.createElement('li');
-                    voteItem.textContent = `${party} election: 
-                                            ${elections[party]}`;
+                    voteItem.textContent = `${color} House: 
+                                            ${colorVotes[color]}`;
                     votedList.appendChild(voteItem);
                 }
             }
