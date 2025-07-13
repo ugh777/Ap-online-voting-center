@@ -1,6 +1,4 @@
 welcome to Ap online voting center
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +23,7 @@ welcome to Ap online voting center
               Online Voting
           </h1>
         <div class="flex flex-col mb-4">
-            <label for="party" class="text-lg font-semibold mb-2">
+            <label for="color" class="text-lg font-semibold mb-2">
                   Select party:
               </label>
             <select id="color" 
@@ -78,7 +76,7 @@ welcome to Ap online voting center
                 colorVotes[selectedColor] = (colorVotes[selectedColor] || 0)+1;
                 localStorage.setItem('colorVotes', JSON.stringify(colorVotes));
                 resultMessage.textContent = `You voted for 
-                                             ${selected party } party .`;
+                                             ${selectedColor} party.`;
                 displayVotes();
             });
             clearButton.addEventListener('click', function () {
@@ -107,10 +105,10 @@ welcome to Ap online voting center
                             label: 'Votes',
                             data: votes,
                             backgroundColor: [
-                                'rgb(100, 50, 75)',
-                                'rgb(75, 50, 100)',
-                                'rgb(75, 100, 50)',
-                                'rgb(50, 75, 100)',
+                                'rgb(255, 99, 132)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 205, 86)',
+                                'rgb(75, 192, 192)',
                             ],
                             hoverOffset: 4
                         }]
